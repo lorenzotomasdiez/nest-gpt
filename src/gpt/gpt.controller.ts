@@ -124,4 +124,9 @@ export class GptController {
   ) {
     return await this.gptService.generateImageVariation(imageVariationDto);
   }
+
+  @Get('wakeup-message')
+  async getWakeupMessage() {
+    return await this.gptService.generateWakeUpMesage();
+  }
 }

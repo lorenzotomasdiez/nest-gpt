@@ -6,5 +6,5 @@ export class SendMessageDTO {
 
   @IsString()
   @IsOptional()
-  chatId: string;
+  chatId?: string;
 }

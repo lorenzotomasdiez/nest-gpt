@@ -5,3 +5,4 @@ export * from "./text-to-audio.use-case";
 export * from "./audio-to-text.use-case";
 export * from "./image-generation.use-case";
 export * from "./generate-image-variation.use-case";
+export * from "./generate-morning-text.use-case";

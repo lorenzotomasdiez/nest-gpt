@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import OpenAI from 'openai';
 import * as path from "path";
 import * as fs from 'fs';
-import { audioToTextUseCase, generateImageVariationUseCase, imageGenerationUseCase, orthographyCheckUseCase, prosConsDiscusserStreamUseCase, prosConsDiscusserUseCase, textToAudioUseCase, translateStreamUseCase } from './use-cases';
+import { audioToTextUseCase, generateImageVariationUseCase, generateWakeUpMesageUseCase, imageGenerationUseCase, orthographyCheckUseCase, prosConsDiscusserStreamUseCase, prosConsDiscusserUseCase, textToAudioUseCase, translateStreamUseCase } from './use-cases';
 import { OrthographyDto } from './dtos/orthography.dto';
 import { ImageGenerationDto, ImageVariationDto, ProsConsDiscusserDto, TextToAudioDto, TranslateDto } from './dtos';
 
@@ -88,5 +88,11 @@ export class GptService {
       openai: this.openai,
       baseImage: imageVariationDto.baseImage,
     })
+  }
+
+  async generateWakeUpMesage() {
+    return await generateWakeUpMesageUseCase({
+      openai: this.openai
+    });
   }
 }
